@@ -29,8 +29,6 @@ execute() {
 	"$@"
 }
 
-log "---------------- dev-env -----------------"
-
 copy_dir() {
 	from=$1
 	to=$2
@@ -44,7 +42,6 @@ copy_dir() {
 	popd > /dev/null
 }
 
-
 copy_file() {
 	from=$1
 	to=$2
@@ -54,5 +51,8 @@ copy_file() {
 	execute sudo cp $from $to/$name
 }
 
+log "---------------- dev-env -----------------"
+
 copy_dir .config $HOME/.config
 copy_file .specialconfig $HOME
+
